@@ -80,7 +80,7 @@ subtract_keys = ['-', 'subtract', 'minus', 'diiference', 'deduct', 'take away', 
 multiply_keys = ['*','x', 'X', 'multiply','multiplied', 'multiplied by', 'multiplication', 'into']
 divide_keys = ['division', '/', 'divide', 'divided by', 'by']
 app_opener_keys = ['open', 'execute', 'run']
-apps_list = ['chrome', 'wmplayer', 'calculator', 'calender', 'camera', 'notepad', 'my pc', 'mail']
+apps_list = ['chrome', 'settings', 'whatsapp', 'command prompt', 'recycle bin', 'wmplayer', 'calculator', 'calender', 'camera', 'notepad', 'my pc', 'mail']
 exit_keys = ['close', 'exit', 'bye', 'terminate', 'finish', 'quit']
 
 print("Hello!!! welcome to smart helper")
@@ -91,11 +91,11 @@ while True:
     print("Your Query: ", end = '')
     s = input()
     words = s.split(" ")
-    f = 0
 
     if s == "What can you do" or s == "what can you do":
         print("Heyy!! I am your smart helper. \n I can help you with some of your tasks")
-        print("I can open any application installed on your pc.\n")
+        print("I can open any application installed on your pc.")
+	print("You can type 'apps' to get a list of all supported apps. \n")
         print("I can also perform some basic mathematical calculations.")
         print("Type 'smart calc' to activate smart calculator. \n")
         print("I can search queries on google.")
@@ -107,6 +107,8 @@ while True:
         google()
     elif 'smart calc' in s:
         smart_calc()
+    elif 'apps' in words:
+        print(apps_list)	
     elif 'reminder' in words:
         reminder()
     elif app_opener(words):
@@ -115,10 +117,6 @@ while True:
                 os.system(app)
     else:
         print("Sorry! I could not recognize your query")
-        f = 1
-
-    if f != 1:	
-        print("Query executed successfully!")
-
+       
  
 
